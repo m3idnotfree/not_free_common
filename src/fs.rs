@@ -8,7 +8,6 @@ use tokio::{
 
 use crate::err::{ReadJsonError, WriteJsonError};
 
-// pub async fn write_json<T: serde::Serialize>(path: PathBuf, content: T) -> Result<(), CommonError> {
 pub async fn write_json<T: serde::Serialize>(
     path: PathBuf,
     content: T,
@@ -18,6 +17,7 @@ pub async fn write_json<T: serde::Serialize>(
     let res = serde_json::to_string_pretty(&content)?;
     writer.write_all(res.as_bytes()).await?;
     writer.flush().await?;
+
     Ok(())
 }
 
