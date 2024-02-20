@@ -1,4 +1,4 @@
-mod err;
+pub mod err;
 pub use err::Error;
 
 mod utils;
@@ -9,4 +9,4 @@ pub use fs::read_json;
 pub use fs::write_json;
 
 mod oauth2;
-pub use oauth2::Oauth2;
+pub use oauth2::Oauth2Trait;
